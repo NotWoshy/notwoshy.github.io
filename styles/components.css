@@ -1,0 +1,22 @@
+:root {
+  --bayer-pat-50: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Crect x='0' y='0' width='2' height='2' fill='%231f2de6'/%3E%3Crect x='4' y='0' width='2' height='2' fill='%231f2de6'/%3E%3Crect x='2' y='2' width='2' height='2' fill='%231f2de6'/%3E%3Crect x='6' y='2' width='2' height='2' fill='%231f2de6'/%3E%3Crect x='0' y='4' width='2' height='2' fill='%231f2de6'/%3E%3Crect x='4' y='4' width='2' height='2' fill='%231f2de6'/%3E%3Crect x='2' y='6' width='2' height='2' fill='%231f2de6'/%3E%3Crect x='6' y='6' width='2' height='2' fill='%231f2de6'/%3E%3C/svg%3E");
+}
+
+.section-dither-bar {
+  flex: 1;
+  max-width: 140px;
+  height: 10px;
+  margin-left: 20px;
+  background-image: var(--bayer-pat-50);
+  background-repeat: repeat;
+  background-size: 8px 8px;
+  opacity: 0.45;
+  border-radius: 1px;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+.section-header:hover .section-dither-bar {
+  opacity: 0.85;
+}
